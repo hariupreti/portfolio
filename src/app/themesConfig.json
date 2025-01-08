@@ -1,0 +1,7 @@
+{
+    "defaultTheme": "default",
+    "availableThemes": [
+      { "key": "default", "name": "Default Theme", "author": "Project Owner" },
+      { "key": "theme1", "name": "Modern Theme", "author": "Contributor A" }
+    ]
+}  
