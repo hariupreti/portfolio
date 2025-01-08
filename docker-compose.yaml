@@ -1,0 +1,7 @@
+services:
+  react:
+    build: 
+      context: ./
+      dockerfile: docker/dockerfile
+    ports:
+      - 3001:3002
