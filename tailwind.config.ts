@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'avatar': "url('themes/default/assets/avatar.jpeg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
