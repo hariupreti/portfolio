@@ -1,29 +1,26 @@
-# Use Node.js as the base image
-FROM node:18-alpine
-
-# Set the working directory inside the container
+# Stage 1: Install dependencies
+FROM node:18 AS dependencies
 WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install --frozen-lockfile
 
-# Copy package.json and package-lock.json to install dependencies
-COPY package.json ./
+# Stage 2: Build application
+FROM node:18 AS builder
+WORKDIR /app
+COPY . .
+COPY --from=dependencies /app/node_modules ./node_modules
+RUN npm run build
 
-# Install dependencies
-RUN npm install
+# Stage 3: Development server
+FROM node:18 AS dev
+WORKDIR /app
+COPY . .
+COPY --from=dependencies /app/node_modules ./node_modules
+CMD ["npm", "run", "dev"]
 
-# Copy the rest of the application code
-COPY ./src .
-
-# Build the React app for production
-# RUN npm run dev
-
-# Use a lightweight web server to serve the production build
-FROM nginx:alpine
-
-# Copy the React build to the nginx HTML directory
-COPY --from=0 /app/build /usr/share/nginx/html
-
-# Expose the default nginx port
+# Stage 4: Production server
+FROM nginx:alpine AS prod
+COPY --from=builder /app/.next /usr/share/nginx/html
+COPY --from=builder /app/public /usr/share/nginx/html
 EXPOSE 80
-
-# Start nginx when the container launches
 CMD ["nginx", "-g", "daemon off;"]

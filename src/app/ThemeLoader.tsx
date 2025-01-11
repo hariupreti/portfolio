@@ -5,7 +5,10 @@ interface ThemeLoaderProps {
   children: React.ReactNode; // Add this to accept children
 }
 
-const ThemeLoader: React.FC<ThemeLoaderProps> = ({ selectedTheme, children }) => {
+const ThemeLoader: React.FC<ThemeLoaderProps> = ({
+  selectedTheme,
+  children,
+}) => {
   const themes: Record<string, React.LazyExoticComponent<() => JSX.Element>> = {
     default: React.lazy(() => import("./themes/default/Layout")),
     theme1: React.lazy(() => import("./themes/theme1/Layout")),
@@ -15,9 +18,7 @@ const ThemeLoader: React.FC<ThemeLoaderProps> = ({ selectedTheme, children }) =>
 
   return (
     <React.Suspense fallback={<div>Loading theme...</div>}>
-      <SelectedTheme>
-        {children} {/* Render children here */}
-      </SelectedTheme>
+      <SelectedTheme>{children}</SelectedTheme>
     </React.Suspense>
   );
 };
