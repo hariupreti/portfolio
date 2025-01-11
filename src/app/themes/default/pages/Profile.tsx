@@ -8,10 +8,10 @@ import { RxTwitterLogo } from "react-icons/rx";
 import { SiWhatsapp } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 
-export default function Homepage() {
+export default function Profile() {
   return (
     <div>
-      Hello there
+      Hello there from profile page
       {/* <AnimatedAvatar></AnimatedAvatar>
       <div className="w-full text-center">
         <h1 className="text-3xl font-mono font-semibold text-slate-300">
