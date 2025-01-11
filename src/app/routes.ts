@@ -1,6 +1,7 @@
+// src/app/routes.ts
 export const routes = [
-    { path: "/", name: "Home", component: "Homepage" },
-    { path: "/about", name: "About", component: "AboutPage" },
-    { path: "/contact", name: "Contact", component: "ContactPage" },
-  ];
-  
+  { path: "/home", name: "Home", component: "Home" },
+  { path: "/about", name: "About", component: "About" },
+  { path: "/contact", name: "Contact", component: "Contact" },
+  { path: "/profile", name: "Profile", component: "Profile" },
+];
