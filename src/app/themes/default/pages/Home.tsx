@@ -11,8 +11,7 @@ import { VscGithub } from "react-icons/vsc";
 export default function Home() {
   return (
     <div>
-      Hello there from home page
-      {/* <AnimatedAvatar></AnimatedAvatar>
+      <AnimatedAvatar></AnimatedAvatar>
       <div className="w-full text-center">
         <h1 className="text-3xl font-mono font-semibold text-slate-300">
           Hari Upreti
@@ -28,7 +27,7 @@ export default function Home() {
         <BsFillEnvelopeAtFill className="text-3xl cursor-pointer transition-all delay-100 duration-200 hover:-translate-y-2 hover:text-red-400"></BsFillEnvelopeAtFill>
         <SiWhatsapp className="text-3xl cursor-pointer transition-all delay-100 duration-200 hover:-translate-y-2 hover:text-green-400"></SiWhatsapp>
         <MdPictureAsPdf className="text-3xl cursor-pointer transition-all delay-100 duration-200 hover:-translate-y-2 hover:text-violet-400"></MdPictureAsPdf>
-      </div> */}
+      </div>
     </div>
   );
 }
