@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "./components/Loading";
 
 interface ThemeLoaderProps {
   selectedTheme: string;
@@ -17,7 +18,7 @@ const ThemeLoader: React.FC<ThemeLoaderProps> = ({
   const SelectedTheme = themes[selectedTheme] || themes["default"];
 
   return (
-    <React.Suspense fallback={<div>Loading theme...</div>}>
+    <React.Suspense fallback={<Loading></Loading>}>
       <SelectedTheme>{children}</SelectedTheme>
     </React.Suspense>
   );
