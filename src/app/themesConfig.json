@@ -1,7 +1,9 @@
 {
-    "defaultTheme": "default",
+    "defaultTheme": "system",
     "availableThemes": [
-      { "key": "default", "name": "Default Theme", "author": "Project Owner" },
-      { "key": "theme1", "name": "Modern Theme", "author": "Contributor A" }
+      { "key": "system", "path":"/system", "name": "System Theme", "author": "Hari Upreti", "preview":"/themes/system.png" },
+      { "key": "default", "path":"/default", "name": "Default Theme", "author": "Project Owner", "preview":"/themes/default.png" },
+      { "key": "theme1", "path":"/theme1", "name": "Modern Theme", "author": "Contributor A", "preview":"/themes/sstem.png" }
     ]
 }  
+

@@ -7,12 +7,10 @@ import themesConfig from "./themesConfig.json";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [selectedTheme, setSelectedTheme] = useState<string>(
-    themesConfig.defaultTheme || "default"
+    themesConfig.defaultTheme || "system"
   );
   const handleThemeChange = (theme: string) => {
-    setTimeout(() => {
-      setSelectedTheme(theme);
-    }, 9000);
+    setSelectedTheme(theme);
   };
   const showThemeSelector = process.env.APP_MODE !== "production";
 
@@ -20,7 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         {showThemeSelector && (
-          <div className="w-full bg-black">
+          <div className="w-full bg-white/5">
             <ThemeSelector onThemeChange={handleThemeChange} />
           </div>
         )}
